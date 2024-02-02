@@ -1,0 +1,96 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#container1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+  height: 400px;
+  /* background-color: #ccc; */
+  padding: 20px;
+}
+
+#container2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+  height: 400px;
+  /* background-color: #ccc; */
+  padding: 20px;
+}
+
+#left-container1,
+#right-container1 {
+  width: 200px;
+  height: 100%;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#left-container2,
+#right-container2 {
+  width: 200px;
+  height: 100%;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#elevator1 {
+  width: 200px;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+#elevator2 {
+  width: 200px;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+}
+
+#elevator-door1 {
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  transition: transform 0.5s;
+}
+
+#elevator-door2 {
+  width: 50%;
+  height: 100%;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  transition: transform 0.5s;
+}
+
+#button1 {
+  padding: 10px 20px;
+  background-color: #923260;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#button2 {
+  padding: 10px 20px;
+  background-color: #579928;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+

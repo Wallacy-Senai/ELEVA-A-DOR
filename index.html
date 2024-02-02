@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elevadores</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="container1" class="elevator-container">
+    <div id="left-container">
+        <button id="button1">Chamar Elevador</button>
+    </div>
+    <div id="right-container">
+        <div class="button-row">
+            <button class="floor-button" data-floor="1" id="floor-1-1">1</button>
+            <button class="floor-button" data-floor="2" id="floor-2-1">2</button>
+            <button class="floor-button" data-floor="3" id="floor-3-1">3</button>
+        </div>
+        <div class="button-row">
+            <button class="floor-button" data-floor="4" id="floor-4-1">4</button>
+            <button class="floor-button" data-floor="5" id="floor-5-1">5</button>
+            <button class="floor-button" data-floor="6" id="floor-6-1">6</button>
+        </div>
+        <div class="button-row">
+            <button class="floor-button" data-floor="0" id="floor-0-1">Térreo</button>
+            <button class="floor-button" data-floor="-1" id="floor--1-1">Subsolo 1</button>
+            <button class="floor-button" data-floor="-2" id="floor--2-1">Subsolo 2</button>
+        </div>
+    </div>
+    <div id="elevator-image">
+        <img id="elevator-img-1" src="img/elevadorFechado.png" alt="Elevador Fechado">
+    </div>
+</div>
+
+<div id="container2" class="elevator-container">
+    <div id="left-container">
+        <button id="button2">Chamar Elevador</button>
+    </div>
+    <div id="right-container">
+        <div class="button-row">
+            <button class="floor-button" data-floor="1" id="floor-1-2">1</button>
+            <button class="floor-button" data-floor="2" id="floor-2-2">2</button>
+            <button class="floor-button" data-floor="3" id="floor-3-2">3</button>
+        </div>
+        <div class="button-row">
+            <button class="floor-button" data-floor="4" id="floor-4-2">4</button>
+            <button class="floor-button" data-floor="5" id="floor-5-2">5</button>
+            <button class="floor-button" data-floor="6" id="floor-6-2">6</button>
+        </div>
+        <div class="button-row">
+            <button class="floor-button" data-floor="0" id="floor-0-2">Térreo</button>
+            <button class="floor-button" data-floor="-1" id="floor--1-2">Subsolo 1</button>
+            <button class="floor-button" data-floor="-2" id="floor--2-2">Subsolo 2</button>
+        </div>
+    </div>
+    <div id="elevator-image">
+        <img id="elevator-img-2" src="img/elevadorFechado.png" alt="Elevador Fechado">
+    </div>
+</div>
+
+<script>
+document.getElementById('button1').addEventListener('click', function() {
+    openElevator(1);
+});
+
+document.getElementById('button2').addEventListener('click', function() {
+    openElevator(2);
+});
+
+document.getElementById('floor-1-1').addEventListener('click', function() {
+    closeElevator(1);
+});
+document.getElementById('floor-2-1').addEventListener('click', function() {
+    closeElevator(1);
+});
+document.getElementById('floor-3-1').addEventListener('click', function() {
+    closeElevator(1);
+});
+document.getElementById('floor-4-1').addEventListener('click', function() {
+    closeElevator(1);
+});
+document.getElementById('floor-5-1').addEventListener('click', function() {
+    closeElevator(1);
+});
+document.getElementById('floor-6-1').addEventListener('click', function() {
+    closeElevator(1);
+});
+document.getElementById('floor-0-1').addEventListener('click', function() {
+    closeElevator(1);
+});
+document.getElementById('floor--1-1').addEventListener('click', function() {
+    closeElevator(1);
+});
+document.getElementById('floor--2-1').addEventListener('click', function() {
+    closeElevator(1);
+});
+
+document.getElementById('floor-1-2').addEventListener('click', function() {
+    closeElevator(2);
+});
+document.getElementById('floor-2-2').addEventListener('click', function() {
+    closeElevator(2);
+});
+document.getElementById('floor-3-2').addEventListener('click', function() {
+    closeElevator(2);
+});
+document.getElementById('floor-4-2').addEventListener('click', function() {
+    closeElevator(2);
+});
+document.getElementById('floor-5-2').addEventListener('click', function() {
+    closeElevator(2);
+});
+document.getElementById('floor-6-2').addEventListener('click', function() {
+    closeElevator(2);
+});
+document.getElementById('floor-0-2').addEventListener('click', function() {
+    closeElevator(2);
+});
+document.getElementById('floor--1-2').addEventListener('click', function() {
+    closeElevator(2);
+});
+document.getElementById('floor--2-2').addEventListener('click', function() {
+    closeElevator(2);
+});
+
+document.querySelectorAll('.floor-button').forEach(button => {
+    button.addEventListener('click', function() {
+        var floor = this.getAttribute('data-floor');
+        changeBackgroundColor(floor);
+    });
+});
+
+function changeBackgroundColor(floor) {
+    var colors = {
+        '1': 'red',
+        '2': 'blue',
+        '3': 'green',
+        '4': 'yellow',
+        '5': 'orange',
+        '6': 'purple',
+        '0': 'white',
+        '-1': 'brown',
+        '-2': 'gray'
+    };
+
+    document.body.style.backgroundColor = colors[floor];
+}
+
+function openElevator(elevatorNumber) {
+    var elevatorImg = document.getElementById('elevator-img-' + elevatorNumber);
+    elevatorImg.src = 'img/elevadorAberto.png'; // Substitua pelo caminho correto da imagem do elevador aberto
+}
+
+function closeElevator(elevatorNumber) {
+    var elevatorImg = document.getElementById('elevator-img-' + elevatorNumber);
+    elevatorImg.src = 'img/elevadorFechado.png'; // Substitua pelo caminho correto da imagem do elevador fechado
+}
+</script>
+</body>
+</html>
